@@ -1,0 +1,27 @@
+.weather {
+  background-color: Black;
+    color: white;
+    border: 1px solid gray;
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 15px;
+    
+  #weatherIcon{
+      font-size: 48px;
+    }
+    #currentTemp{
+      color: white;
+      font-size: 36px;
+      font-weight: bold;
+    }
+    
+     
+    
+    .forecastIcon{
+      font-size: 36px;
+    }
+    #forecastRow p {
+      color: white;
+      margin-bottom: 0;
+    }
+  }

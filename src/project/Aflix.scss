@@ -1,0 +1,121 @@
+.A {
+    background: black;
+    color: white;
+  
+    nav {
+      background: black;
+      color: white;
+      padding-bottom: 5px;
+      padding-top: 5px;
+    }
+    span {
+      padding-left: 1rem;
+      font-size: 16px;
+    }
+    #headlineContent {
+      background-image: url(../../public/img/cover.jpg);
+      min-height: 550px;
+      background-size: cover;
+      margin-top: 0px;
+    }
+  
+    #linksBar span {
+      margin-left: 5px;
+      margin-right: 5px;
+      font-size: 12px;
+    }
+    #linksBar span:hover {
+      color: gray;
+      cursor: pointer;
+    }
+    button {
+      background: white;
+      border-radius: 5px;
+      padding: 5px 15px 5px 15px;
+      font-weight: 700;
+    }
+    button span {
+      padding-left: 0;
+    }
+    #more {
+      background-color: rgba(0, 0, 0, 0.25);
+      font-weight: 600;
+      color: white;
+    }
+  
+    div {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    h1 {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  
+    #col-1 {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+    #tv-ma {
+      content: bottom;
+      margin-top: auto;
+    }
+  
+    #netflixN {
+      height: 25px;
+    }
+    #seriesRow {
+      color: gray;
+      font-weight: bold;
+    }
+    #showName {
+      font-family: "Cabin", sans-serif;
+      font-size: 56px;
+      text-shadow: 2px 2px black;
+      letter-spacing: 5px;
+    }
+    #top10 {
+      font-weight: bold;
+      padding-left: 10px;
+      text-shadow: 1px 1px black;
+    }
+    #headlineContent p {
+      margin-top: 10px;
+    }
+    #linksBar,
+    #icons {
+      padding-top: 10px;
+    }
+    #ratingCol .material-symbols-outlined {
+      border: 2px solid white;
+      border-radius: 100px;
+      padding: 5px;
+      content: bottom;
+      margin-top: auto;
+    }
+  
+    #rating {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 5px 20px 5px 20px;
+      border-left: 2px solid white;
+      content: bottom;
+      margin-top: auto;
+      border-radius: 10px;
+    }
+  
+    /*#abnormalScreenSize {
+        display: none;
+    }*/
+  
+    /*@media only screen and (max-width: 250px), (min-width: 1400px) {
+        #abnormalScreenSize {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    .container-fluid {
+        display: none;
+    }*/
+  }
+  
