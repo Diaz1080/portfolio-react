@@ -13,7 +13,7 @@ const Project = () => {
   // #11 Component loaded for the first time so...
   useEffect(() => {
     // #12 Set the state using the data from the other file and the param from the URL
-    setProjectData(data[params.link]);
+    setProjectData(data[params.projectNum]);
   }, []);
 
   // #10 If the data hasn't been loaded yet, show the loading message

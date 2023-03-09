@@ -2,7 +2,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.scss";
 import Home from "./Home/Home";
-import Project from "./project/Project";
+// import Project from "./project/Project";
 import Weather from "./project/Weather";
 import Feedback from "./project/Feedback";
 

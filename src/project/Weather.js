@@ -1,8 +1,10 @@
-import "./weather.scss";
-import { useEffect, useState } from "react";
-import pic1 from "./pic1.jpg";
 
-const Weather =() => {
+import ".//weather.scss";
+import { useEffect, useState } from "react";
+import pic1 from ".//pic1.jpg";
+
+
+const Weather = () => {
   const [weatherData, setWeatherData] = useState();
   const [forecastData, setForecastData] = useState([
     { day: "THU", temp: 32, icon: "❄️" },
