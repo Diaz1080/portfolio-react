@@ -1,8 +1,7 @@
-
 import ".//weather.scss";
 import { useEffect, useState } from "react";
 import pic1 from ".//pic1.jpg";
-
+import weatherAPIkey from "./weatherAPIkey";
 
 const Weather = () => {
   const [weatherData, setWeatherData] = useState();
@@ -16,14 +15,14 @@ const Weather = () => {
   useEffect(() => {
     const makeAPICalls = async () => {
       const geocodingResponse = await fetch(
-        "http://api.openweathermap.org/geo/1.0/direct?q=Syracuse,NY,US&limit=5&appid=f10fed638ddb1d2516ce5527d9602aff"
+        `http://api.openweathermap.org/geo/1.0/direct?q=Syracuse,NY,US&limit=5&appid=${weatherAPIkey}`
       );
       const geocodingData = await geocodingResponse.json();
       const lat = geocodingData[0].lat;
       const lon = geocodingData[0].lon;
 
       const currentWeatherResponse = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=4db60a6d7c0d43ad51b560009b74f90d&units=imperial`
+        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${weatherAPIkey}&units=imperial`
       );
       const currentWeatherData = await currentWeatherResponse.json();
       // console.log(currentWeatherData);
@@ -51,7 +50,6 @@ const Weather = () => {
       const days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
 
       setForecastData([
-		
         {
           day: days[new Date(forecastData.list[0].dt_txt).getDay()], //forecastData.list[0],
           temp: Math.round(forecastData.list[0].main.temp),
@@ -59,23 +57,23 @@ const Weather = () => {
         },
         {
           day: days[new Date(forecastData.list[8].dt_txt).getDay()], //forecastData.list[0],
-          temp:  Math.round(forecastData.list[0].main.temp),
+          temp: Math.round(forecastData.list[0].main.temp),
           icon: forecastData.list[8].weather[0].icon,
         },
         {
-		day: days[new Date(forecastData.list[16].dt_txt).getDay()], //forecastData.list[0],
-		temp: Math.round(forecastData.list[16].main.temp),
-		icon: forecastData.list[16].weather[0].icon,
+          day: days[new Date(forecastData.list[16].dt_txt).getDay()], //forecastData.list[0],
+          temp: Math.round(forecastData.list[16].main.temp),
+          icon: forecastData.list[16].weather[0].icon,
         },
         {
-		day: days[new Date(forecastData.list[24].dt_txt).getDay()], //forecastData.list[0],
-		temp: Math.round(forecastData.list[24].main.temp),
-		icon: forecastData.list[24].weather[0].icon,
+          day: days[new Date(forecastData.list[24].dt_txt).getDay()], //forecastData.list[0],
+          temp: Math.round(forecastData.list[24].main.temp),
+          icon: forecastData.list[24].weather[0].icon,
         },
         {
-		day: days[new Date(forecastData.list[32].dt_txt).getDay()], //forecastData.list[0],
-		temp: Math.round(forecastData.list[32].main.temp),
-		icon: forecastData.list[32].weather[0].icon,
+          day: days[new Date(forecastData.list[32].dt_txt).getDay()], //forecastData.list[0],
+          temp: Math.round(forecastData.list[32].main.temp),
+          icon: forecastData.list[32].weather[0].icon,
         },
       ]);
 
@@ -94,12 +92,13 @@ const Weather = () => {
 
   return (
     <div className="App">
-      <div className="container weather" >
-        <img src={pic1} style={{ maxWidth: "100%" }} alt="screenshot"/>
+      <div className="container weather">
+        <img src={pic1} style={{ maxWidth: "100%" }} alt="screenshot" />
         <div className="row">
           <div className="col-2" id="weatherIcon">
             <img
-              src={`http://openweathermap.org/img/wn/${weatherData.iconCode}@2x.png` } alt="screenshot"
+              src={`http://openweathermap.org/img/wn/${weatherData.iconCode}@2x.png`}
+              alt="screenshot"
             />
           </div>
           <div className="col-2">
@@ -135,14 +134,17 @@ const Weather = () => {
       </div>
     </div>
   );
-}
+};
 
 const ForecastDay = ({ day, icon, temp }) => {
   return (
     <div className="col text-center">
       <p>{day}</p>
       <p className="forecastIcon">
-        <img src={`http://openweathermap.org/img/wn/${icon}@2x.png ` } alt="screenshot"/>
+        <img
+          src={`http://openweathermap.org/img/wn/${icon}@2x.png `}
+          alt="screenshot"
+        />
       </p>
       <p>{temp}°</p>
     </div>
